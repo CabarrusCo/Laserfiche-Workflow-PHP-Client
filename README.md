@@ -23,11 +23,7 @@ This is a minimalistic PHP class for the Laserfiche Workflow API.
 
 ### Download the file
 ---
-No Composer or anything needed. This class comes as a stand alone file.
-
-```
-go get github.com/CabarrusCo/Laserfiche-Workflow-PHP-Client
-```
+No Composer or anything needed. This class comes as a stand alone file. Just download it however you perfer and put it in your PHP project.
 
 ### Spin up a new instance
 ---
