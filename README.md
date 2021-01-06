@@ -23,7 +23,7 @@ This is a minimalistic PHP class for the Laserfiche Workflow API.
 
 ### Download the file
 ---
-No Composer or anything needed. This class comes as a stand alone file. Just download it however you perfer and put it in your PHP project.
+No Composer needed. This class comes as a stand alone file. Download it however you perfer and put it in your PHP project.
 
 ### Spin up a new instance
 ---
