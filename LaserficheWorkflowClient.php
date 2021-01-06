@@ -7,10 +7,6 @@
         private $domain;
 
         public function __construct($workflowURL, $username="", $password="", $domain="") {
-            $this->workflowURL = $workflowURL;
-            $this->username = $username;
-            $this->password = $password;
-            $this->domain = $domain;
 
             if($username !== "" || $password !== "" || $domain !== "") {
 
@@ -26,6 +22,11 @@
                     throw new Exception("Domain is blank but other login information provided");
                 }
             }
+
+            $this->workflowURL = $workflowURL;
+            $this->username = $username;
+            $this->password = $password;
+            $this->domain = $domain;
         }
 
         private function performCURLRequest(string $url, array $headers, string $data="", bool $curlPOST=false) {
@@ -42,7 +43,7 @@
 
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 
-            if($this->username != "" && $this->password != "" && $this->domain != "") {
+            if($this->username !== "" && $this->password !== "" && $this->domain !== "") {
                 $fullLogin = "$this->domain\\$this->username:$this->password";
                 curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_NTLM);
                 curl_setopt($ch, CURLOPT_USERPWD, $fullLogin);
