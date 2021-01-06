@@ -30,7 +30,7 @@ No Composer needed. This class comes as a stand alone file. Download it however 
 Require the file in your PHP file using this syntax.
 
 ```
-REQUIRE "myClassDir/LaserficheWorkflowClient.php";
+REQUIRE "MyClassDir/LaserficheWorkflowClient.php";
 ```
 From there, spin up a new instance. Instance will have ONE required field and three optional fields. If your Workflow server is setup for NTLM auth then you will need to provide the Username, Password, and Domain.
 
@@ -57,7 +57,7 @@ If you wish to queue the workflow instead of directly creating the Workflow, the
 <?php
     // Example # 1 for starting a workflow-- NTLM Auth, CREATE(No queue), WITH data
 
-    REQUIRE "MyClassPath/LaserficheWorkflowClient.php";
+    REQUIRE "MyClassDir/LaserficheWorkflowClient.php";
 
     $workflowClient = new LaserficheWorkflowClient("https://myworkflowserver", "myusername", "mypassword", "mydomain");
     $data = ["ParameterCollection" => [["Name" => "Message","Value" => "Hello World!"]]];
@@ -70,7 +70,7 @@ If you wish to queue the workflow instead of directly creating the Workflow, the
 <?php
     //Example #2 for starting a workflow -- No NTLM Auth, CREATE(No queue), NO Data
     
-    REQUIRE "MyClassPath/LaserficheWorkflowClient.php";
+    REQUIRE "MyClassDir/LaserficheWorkflowClient.php";
 
     $workflowClient = new LaserficheWorkflowClient("https://myworkflowserver");
     
@@ -84,7 +84,7 @@ If you wish to queue the workflow instead of directly creating the Workflow, the
     
     <?php
 
-    REQUIRE "MyClassPath/LaserficheWorkflowClient.php";
+    REQUIRE "MyClassDir/LaserficheWorkflowClient.php";
 
     $workflowClient = new LaserficheWorkflowClient("https://myworkflowserver", "myusername", "mypassword", "mydomain");
     $data = ["ParameterCollection" => [["Name" => "Message","Value" => "Hello World!"]]];
@@ -101,7 +101,7 @@ Workflows can be retrieved from the server using the Retrieve Workflows Endpoint
 <?php
     //Example 1- Retrieve Workflows with NTLM Auth
 
-    REQUIRE "MyClassPath/LaserficheWorkflowClient.php";
+    REQUIRE "MyClassDir/LaserficheWorkflowClient.php";
 
     $workflowClient = new LaserficheWorkflowClient("https://myworkflowserver", "myusername", "mypassword", "mydomain");
     $workflowStatus = $workflowClient->retrieveWorkflows();
@@ -113,7 +113,7 @@ Workflows can be retrieved from the server using the Retrieve Workflows Endpoint
 <?php
     //Example 2- Retrieve Workflows No NTLM Auth
 
-    REQUIRE "MyClassPath/LaserficheWorkflowClient.php";
+    REQUIRE "MyClassDir/LaserficheWorkflowClient.php";
 
     $workflowClient = new LaserficheWorkflowClient("https://myworkflowserver");
     $workflowStatus = $workflowClient->retrieveWorkflows();
@@ -129,7 +129,7 @@ You can also use the Client to grab the Input and Output Parameters a Workflow t
 <?php
     //Example 1- Retrieve Workflows Parameters with NTLM Auth
     
-    REQUIRE "MyClassPath/LaserficheWorkflowClient.php";
+    REQUIRE "MyClassDir/LaserficheWorkflowClient.php";
 
     $workflowClient = new LaserficheWorkflowClient("https://myworkflowserver", "myusername", "mypassword", "mydomain");
 
