@@ -8,8 +8,7 @@
         }
 
         public function addParameter(string $name, $value) {
-            $parameterArray = ["Name" => $name, "Value" => $value];
-            $this->parameterCollection["ParameterCollection"][] = $parameterArray;
+            $this->parameterCollection["ParameterCollection"][] = ["Name" => $name, "Value" => $value];
         }
 
         public function generateParameters() {
