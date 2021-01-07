@@ -93,6 +93,8 @@ If you wish to queue the workflow instead of directly creating the Workflow, the
     print_r($workflowStatus);
  ```
  
+ ### Generating Parameters
+ ---
  There is also a class you can use in the file to generate the parameters, if you don't want to do it by hand. It contains a function called "addParameter". Pass this function the parameter name and the parameter value. Example below
  
  ```
