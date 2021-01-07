@@ -95,7 +95,7 @@ If you wish to queue the workflow instead of directly creating the Workflow, the
  
  ### Generating Parameters
  ---
- There is also a class you can use in the file to generate the parameters, if you don't want to do it by hand. It contains a function called "addParameter". Pass this function the parameter name and the parameter value. Example below
+ There is also a class you can use in the file to generate the parameters. It contains a function called "addParameter". Pass this function the parameter name and the parameter value however many times needed, then use the generateParameters function to generate the array before passing it to startWorkflow. Example below
  
  ```
  <?php
