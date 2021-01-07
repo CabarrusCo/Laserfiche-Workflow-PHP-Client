@@ -1,5 +1,22 @@
 <?php
 
+    class LFWorkflowParameters {
+        private $parameterCollection;
+
+        public function __construct() {
+            $this->parameterCollection = ["ParameterCollection" => []];
+        }
+
+        public function addParameter(string $name, $value) {
+            $parameterArray = ["Name" => $name, "Value" => $value];
+            $this->parameterCollection["ParameterCollection"][] = $parameterArray;
+        }
+
+        public function generateParameters() {
+            return $this->parameterCollection;
+        }
+    }
+
     class LaserficheWorkflowClient {
         private $workflowURL;
         private $username;
