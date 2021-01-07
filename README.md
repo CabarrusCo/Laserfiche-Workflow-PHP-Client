@@ -93,7 +93,26 @@ If you wish to queue the workflow instead of directly creating the Workflow, the
     print_r($workflowStatus);
  ```
  
-  ### Retrieve Workflows
+ There is also a class you can use in the file to generate the parameters, if you don't want to do it by hand. It contains a function called "addParameter". Pass this function the parameter name and the parameter value. Example below
+ 
+ ```
+ <?php
+
+    REQUIRE "MyClassDir/LaserficheWorkflowClient.php";
+
+    $workflowClient = new LaserficheWorkflowClient("https://myworkflowserver", "myusername", "mypassword", "mydomain");
+    $parameterCollection = new LFWorkflowParameters();
+
+    $parameterCollection->addParameter("Message", "Hello World");
+    $parameterCollection->addParameter("NextMessage", "Hello Again World!");
+
+    $postData = $parameterCollection->generateParameters();
+
+    $workflowStatus = $workflowClient->startWorkflow("My Workflow Name Here", $postData);
+    echo json_encode($workflowStatus); // OR print_r for array
+```
+ 
+### Retrieve Workflows
 ---
 Workflows can be retrieved from the server using the Retrieve Workflows Endpoint. Examples below.
 
