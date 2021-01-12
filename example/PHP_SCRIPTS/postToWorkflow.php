@@ -13,6 +13,8 @@
         exit;
     }
 
+    //STORE LOGIN INFORMATION SECURELY, DON'T STORE PLAIN TEXT IN SCRIPT
+
     $workflowClient = new LaserficheWorkflowClient("https://myworkflowurl", "myusername", "mypassword", "mydomain");
     $parameterCollection = new LFWorkflowParameters();
 
