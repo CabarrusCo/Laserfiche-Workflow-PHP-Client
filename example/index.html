@@ -50,7 +50,7 @@
                     return
                 }
     
-                if (this.status === 200) {
+                if (xhr.status === 200) {
                     console.log(JSON.parse(xhr.responseText))
                     alert("Workflow Successfully Started")
                 } else {
