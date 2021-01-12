@@ -1,0 +1,64 @@
+<html>
+    <head>
+        
+    </head>
+
+    <body>
+        <select id="userDecision">
+            <option value="YES">YES</option>
+            <option value="NO">NO</option>
+            <option value="MAYBE">MAYBE</option>
+        </select>
+
+        <br><br>
+
+        <input type="text" id="userReason" placeholder="Justify Your Decision Here"></input>
+        <br><br>
+
+        <button type="button" id="sendWorkflowData" onclick="sendWorkflowData()">Start Workflow</button>
+    </body>
+
+    <script>
+
+        function sendWorkflowData() {
+            let userDecision = document.getElementById("userDecision").value
+            let userReason = document.getElementById("userReason").value
+            
+            if(userDecision !== "YES" && userDecision !== "NO" && userDecision !== "MAYBE") {
+                alert("Invalid decision to workflow")
+                return
+            }
+    
+            if(userReason.length === 0) {
+                alert("No reason given!")
+                return
+            }
+    
+            let formData = new FormData()
+    
+            formData.append("userDecision", userDecision)
+            formData.append("userReason", userReason)
+    
+            let xhr = new XMLHttpRequest()
+            xhr.open("POST", "PHP_SCRIPTS/postToWorkflow.php", true)
+            xhr.setRequestHeader("Accept", "application/json")
+    
+            xhr.send(formData)
+    
+            xhr.onreadystatechange = function() {
+                if(xhr.readyState !== 4) {
+                    return
+                }
+    
+                if (this.status === 200) {
+                    console.log(JSON.parse(xhr.responseText))
+                    alert("Workflow Successfully Started")
+                } else {
+                    alert("Workflow Failed!")
+                }
+            }
+        }
+    
+    </script>
+    
+</html>
